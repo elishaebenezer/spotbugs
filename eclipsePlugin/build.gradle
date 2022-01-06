@@ -7,6 +7,10 @@ plugins {
   id "eclipse-convention"
 }
 
+tasks.named('compileJava', JavaCompile).configure {
+  options.release = 11
+}
+
 def readLastCommitHash() {
   // Same as 'git log -1 --pretty=format:"%h"'.execute().getText()
   org.ajoberstar.grgit.Grgit.open(dir: rootDir).head().abbreviatedId

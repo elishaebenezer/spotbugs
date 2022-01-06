@@ -7,6 +7,14 @@ tasks.eclipse.dependsOn(cleanEclipse)
 def testCasesProject = 'spotbugsTestCases'.equals(project.name)
 
 eclipse {
+
+  // Force Eclipse use Java 11, otherwise it will get Java 17 (!) from gradle
+  jdt {
+    sourceCompatibility = 11
+    targetCompatibility = 11
+    javaRuntimeName = "JavaSE-11"
+  }
+  
   project {
     natures 'org.eclipse.jdt.core.javanature'
     natures 'org.eclipse.pde.PluginNature'
