@@ -29,10 +29,15 @@ import javax.annotation.Nonnull;
  */
 public enum BugRankCategory {
 
-    SCARIEST(4), SCARY(9), TROUBLING(14), OF_CONCERN(BugRanker.VISIBLE_RANK_MAX);
+    SCARIEST(4, "Critical"), SCARY(9, "High"), TROUBLING(14, "Medium"), OF_CONCERN(BugRanker.VISIBLE_RANK_MAX, "Low");
 
     public final int maxRank;
+    private final String printName;
 
+    /**
+     * @param rank
+     * @return
+     */
     @Nonnull
     static public BugRankCategory getRank(int rank) {
         for (BugRankCategory c : values()) {
@@ -43,15 +48,17 @@ public enum BugRankCategory {
         throw new IllegalArgumentException("Rank of " + rank + " is outside legal rank");
     }
 
-    private BugRankCategory(int maxRank) {
+    private BugRankCategory(int maxRank, String printName) {
         this.maxRank = maxRank;
+        this.printName = printName;
     }
 
     @Override
     public String toString() {
-        if (this == OF_CONCERN) {
-            return "Of Concern";
-        }
-        return name().substring(0, 1) + name().toLowerCase().substring(1, name().length());
+        return this.printName;
+        /*
+         * if (this == OF_CONCERN) { return "Of Concern"; } return name().substring(0, 1) +
+         * name().toLowerCase().substring(1, name().length());
+         */
     }
 }

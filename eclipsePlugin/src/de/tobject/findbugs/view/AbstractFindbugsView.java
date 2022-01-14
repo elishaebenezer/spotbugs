@@ -61,8 +61,6 @@ public abstract class AbstractFindbugsView extends ViewPart implements IMarkerSe
 
     private Action actionShowBugTreeView;
 
-    private Action actionShowAnnotationsView;
-
     private Action actionShowPerspective;
 
     public AbstractFindbugsView() {
@@ -153,7 +151,7 @@ public abstract class AbstractFindbugsView extends ViewPart implements IMarkerSe
                 showBugTreeView();
             }
         };
-        configureAction(actionShowBugTreeView, "Show Bug Explorer View", "Show Bug Explorer View", TREE_VIEW_IMG);
+        configureAction(actionShowBugTreeView, "Show Scan Results View", "Show Scan Results View", TREE_VIEW_IMG);
 
         actionShowDetailsView = new Action() {
             @Override
@@ -161,7 +159,8 @@ public abstract class AbstractFindbugsView extends ViewPart implements IMarkerSe
                 showDetailsView();
             }
         };
-        configureAction(actionShowDetailsView, "Show Bug Info View", "Show Bug Info View", DETAILS_VIEW_IMG);
+        configureAction(actionShowDetailsView, "Show Vulnerability Info View", "Show Vulnerability Info View",
+                DETAILS_VIEW_IMG);
 
         actionShowPerspective = new Action() {
             @Override
@@ -216,7 +215,7 @@ public abstract class AbstractFindbugsView extends ViewPart implements IMarkerSe
      * @return IWorkbenchSiteProgressService or <code>null</code>.
      */
     protected IWorkbenchSiteProgressService getProgressService() {
-        IWorkbenchSiteProgressService service = (IWorkbenchSiteProgressService) getSite().getAdapter(
+        IWorkbenchSiteProgressService service = getSite().getAdapter(
                 IWorkbenchSiteProgressService.class);
         return service;
     }

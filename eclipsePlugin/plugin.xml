@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="edu.umd.cs.findbugs.plugin.eclipse.findbugsPlugins" name="Custom FindBugs/SpotBugs detector plugins" schema="schema/detectorPlugins.exsd"/>
-   <extension-point id="edu.umd.cs.findbugs.plugin.eclipse.findbugsQuickFixes" name="Custom FindBugs/SpotBugs quick fixes" schema="schema/findbugsQuickFixes.exsd"/>
+   <extension-point id="edu.umd.cs.findbugs.plugin.eclipse.findbugsPlugins" name="Custom FindBugs/CloudDefense detector plugins" schema="schema/detectorPlugins.exsd"/>
+   <extension-point id="edu.umd.cs.findbugs.plugin.eclipse.findbugsQuickFixes" name="Custom FindBugs/CloudDefense quick fixes" schema="schema/findbugsQuickFixes.exsd"/>
    <extension
          point="org.eclipse.core.runtime.adapters">
       <factory
@@ -17,7 +17,7 @@
      <extension
          point="org.eclipse.ui.propertyPages">
       <page
-            name="SpotBugs"
+            name="CloudDefense"
             class="de.tobject.findbugs.properties.FindbugsPropertyPage"
             id="FindBugsPropertyPage">
          <filter
@@ -53,7 +53,7 @@
    </extension>
    <extension
          id="findbugsMarker"
-         name="SpotBugs Problem"
+         name="CloudDefense Problem"
          point="org.eclipse.core.resources.markers">
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.core.resources.textmarker"/>
@@ -63,9 +63,9 @@
 
  <extension
          id="findbugsMarkerScariest"
-         name="SpotBugs Problem (Scariest)"
+         name="CloudDefense Problem (Scariest)"
          point="org.eclipse.core.resources.markers">
-      <super type="com.github.spotbugs.plugin.eclipse.findbugsMarker"/>
+      <super type="ai.clouddefense.plugin.eclipse.findbugsMarker"/>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.core.resources.textmarker"/>
       <super type="org.eclipse.jdt.core.problem"/>
@@ -74,9 +74,9 @@
    </extension>
    <extension
          id="findbugsMarkerScary"
-         name="SpotBugs Problem (Scary)"
+         name="CloudDefense Problem (Scary)"
          point="org.eclipse.core.resources.markers">
-      <super type="com.github.spotbugs.plugin.eclipse.findbugsMarker"/>
+      <super type="ai.clouddefense.plugin.eclipse.findbugsMarker"/>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.core.resources.textmarker"/>
       <super type="org.eclipse.jdt.core.problem"/>
@@ -84,9 +84,9 @@
    </extension>
    <extension
          id="findbugsMarkerTroubling"
-         name="SpotBugs Problem (Troubling)"
+         name="CloudDefense Problem (Troubling)"
          point="org.eclipse.core.resources.markers">
-      <super type="com.github.spotbugs.plugin.eclipse.findbugsMarker"/>
+      <super type="ai.clouddefense.plugin.eclipse.findbugsMarker"/>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.core.resources.textmarker"/>
       <super type="org.eclipse.jdt.core.problem"/>
@@ -94,9 +94,9 @@
    </extension>
    <extension
          id="findbugsMarkerOfConcern"
-         name="SpotBugs Problem (Of concern)"
+         name="CloudDefense Problem (Of concern)"
          point="org.eclipse.core.resources.markers">
-      <super type="com.github.spotbugs.plugin.eclipse.findbugsMarker"/>
+      <super type="ai.clouddefense.plugin.eclipse.findbugsMarker"/>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.core.resources.textmarker"/>
       <super type="org.eclipse.jdt.core.problem"/>
@@ -114,7 +114,7 @@
       <markerAttributeGrouping
             attribute="priority"
             defaultGroupingEntry="org.eclipse.jdt.ui.category.potential"
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarker">
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarker">
          <markerAttributeMapping
 
                markerGroupingEntry="fb.low"
@@ -131,19 +131,19 @@
       </markerAttributeGrouping>
       <markerGroupingEntry
             id="fb.high"
-            label="SpotBugs Warnings (High Confidence)"
+            label="CloudDefense Warnings (High Confidence)"
             markerGrouping="org.eclipse.jdt.ui.java_marker_category"
             priority="79">
       </markerGroupingEntry>
       <markerGroupingEntry
             id="fb.normal"
-            label="SpotBugs Warnings (Normal Confidence)"
+            label="CloudDefense Warnings (Normal Confidence)"
             markerGrouping="org.eclipse.jdt.ui.java_marker_category"
             priority="75">
       </markerGroupingEntry>
       <markerGroupingEntry
             id="fb.low"
-            label="SpotBugs Warnings (Low Confidence)"
+            label="CloudDefense Warnings (Low Confidence)"
             markerGrouping="org.eclipse.jdt.ui.java_marker_category"
             priority="71">
       </markerGroupingEntry>
@@ -153,32 +153,32 @@
    <!-- specify custom icon for findbugsMarker -->
    <extension point="org.eclipse.ui.editors.annotationTypes">
       <type
-            name="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationScariest"
+            name="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationScariest"
             super="org.eclipse.ui.workbench.texteditor.warning"
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerScariest"/>
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerScariest"/>
       <type
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerScary"
-            name="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationScary"
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerScary"
+            name="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationScary"
             super="org.eclipse.ui.workbench.texteditor.warning"/>
       <type
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerTroubling"
-            name="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationTroubling"
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerTroubling"
+            name="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationTroubling"
             super="org.eclipse.ui.workbench.texteditor.warning"/>
       <type
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerOfConcern"
-            name="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationOfConcern"
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerOfConcern"
+            name="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationOfConcern"
             super="org.eclipse.ui.workbench.texteditor.warning"/>
   </extension>
   <extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
       <specification
-            annotationType="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationOfConcern"
+            annotationType="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationOfConcern"
             colorPreferenceKey="findbugs.ofconcern.color"
             colorPreferenceValue="146,209,120"
             icon="icons/buggy-tiny-yellow2.png"
             includeOnPreferencePage="true"
             isGoToNextNavigationTarget="true"
             isGoToNextNavigationTargetKey="findbugs.ofconcern.gotonext"
-            label="SpotBugs 'Of Concern' Warnings"
+            label="CloudDefense 'Of Concern' Warnings"
             overviewRulerPreferenceKey="findbugs.ofconcern.overview"
             overviewRulerPreferenceValue="true"
             quickFixIcon="icons/buggy-tiny-yellow2.png"
@@ -192,14 +192,14 @@
             verticalRulerPreferenceValue="true"/>
 
       <specification
-            annotationType="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationTroubling"
+            annotationType="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationTroubling"
             colorPreferenceKey="findbugs.troubling.color"
             colorPreferenceValue="248,218,49"
             icon="icons/buggy-tiny-yellow.png"
             includeOnPreferencePage="true"
             isGoToNextNavigationTarget="true"
             isGoToNextNavigationTargetKey="findbugs.troubling.gotonext"
-            label="SpotBugs &apos;Troubling&apos; Warnings"
+            label="CloudDefense &apos;Troubling&apos; Warnings"
             overviewRulerPreferenceKey="findbugs.troubling.overview"
             overviewRulerPreferenceValue="true"
             quickFixIcon="icons/buggy-tiny-yellow.png"
@@ -213,14 +213,14 @@
             verticalRulerPreferenceValue="true"/>
 
        <specification
-            annotationType="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationScary"
+            annotationType="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationScary"
             colorPreferenceKey="findbugs.scary.color"
             colorPreferenceValue="248,77,06"
             icon="icons/buggy-tiny-orange.png"
             includeOnPreferencePage="true"
             isGoToNextNavigationTarget="true"
             isGoToNextNavigationTargetKey="findbugs.scary.gotonext"
-            label="SpotBugs &apos;Scary&apos; Warnings"
+            label="CloudDefense &apos;Scary&apos; Warnings"
             overviewRulerPreferenceKey="findbugs.scary.overview"
             overviewRulerPreferenceValue="true"
             quickFixIcon="icons/buggy-tiny-orange.png"
@@ -234,14 +234,14 @@
             verticalRulerPreferenceValue="true"/>
 
       <specification
-            annotationType="com.github.spotbugs.plugin.eclipse.findbugsWarningAnnotationScariest"
+            annotationType="ai.clouddefense.plugin.eclipse.findbugsWarningAnnotationScariest"
             colorPreferenceKey="findbugs.scariest.color"
             colorPreferenceValue="212,6,28"
             icon="icons/buggy-tiny.png"
             includeOnPreferencePage="true"
             isGoToNextNavigationTarget="true"
             isGoToNextNavigationTargetKey="findbugs.scariest.gotonext"
-            label="SpotBugs &apos;Scariest&apos; Warnings"
+            label="CloudDefense &apos;Scariest&apos; Warnings"
             overviewRulerPreferenceKey="findbugs.scariest.overview"
             overviewRulerPreferenceValue="true"
             quickFixIcon="icons/buggy-tiny.png"
@@ -265,7 +265,7 @@
             objectClass="org.eclipse.jdt.core.IOpenable">
          <menu
                id="findbugs"
-               label="SpotBugs"
+               label="CloudDefense"
                path="group.build"/>
          <action
                class="de.tobject.findbugs.actions.ClearMarkersAction"
@@ -300,7 +300,7 @@
             objectClass="org.eclipse.ui.IWorkingSet">
          <menu
                id="findbugs"
-               label="SpotBugs"
+               label="CloudDefense"
                path="group.build"/>
          <action
                class="de.tobject.findbugs.actions.ClearMarkersAction"
@@ -329,7 +329,7 @@
             objectClass="org.eclipse.core.resources.IProject">
          <menu
                id="findbugs"
-               label="SpotBugs"
+               label="CloudDefense"
                path="group.build">
             <separator name="doit" />
             <separator name="save" />
@@ -400,11 +400,11 @@
                class="de.tobject.findbugs.actions.MarkerRulerAction"
                icon="icons/treeView.png"
                id="de.tobject.findbugs.actions.editor.showInBugExplorer"
-               label="Show Bug in Bug Explorer"
+               label="Show in Scan Results"
                menubarPath="additions">
          </action>
          <action
-               label="Show Bug Info"
+               label="Show Vulnerability Info"
                icon="icons/detailsView.png"
                class="de.tobject.findbugs.actions.MarkerRulerAction"
                menubarPath="additions"
@@ -416,7 +416,7 @@
             targetID="#CompilationUnitEditorContext">
          <menu
                id="findbugs"
-               label="SpotBugs"
+               label="CloudDefense"
                path="additions"/>
          <action
                class="de.tobject.findbugs.actions.ClearMarkersEditorAction"
@@ -498,12 +498,12 @@
                enablesFor="1"
                icon="icons/detailsView.png"
                id="de.tobject.findbugs.actions.showBugInfo"
-               label="Show Bug Info"
+               label="Show Vulnerability Info"
                menubarPath="fb">
          </action>
          <filter
                name="superType"
-               value="com.github.spotbugs.plugin.eclipse.findbugsMarker">
+               value="ai.clouddefense.plugin.eclipse.findbugsMarker">
          </filter>
          <action
                class="de.tobject.findbugs.actions.ShowInPackageExplorerAction"
@@ -580,7 +580,7 @@
          </action>
          <menu
                id="findbugs"
-               label="SpotBugs"
+               label="CloudDefense"
                path="group.build">
          </menu>
       </objectContribution>
@@ -658,7 +658,7 @@
    <extension
          point="org.eclipse.ui.views">
       <category
-            name="SpotBugs"
+            name="CloudDefense"
             id="de.tobject.findbugs.view.findBugsCategory">
       </category>
       <view
@@ -666,13 +666,13 @@
             class="de.tobject.findbugs.view.BugInfoView"
             icon="icons/annotationsView.png"
             id="de.tobject.findbugs.view.buginfoview"
-            name="Bug Info"/>
+            name="Vulnerability Info"/>
       <view
          category="de.tobject.findbugs.view.findBugsCategory"
          class="de.tobject.findbugs.view.BugExplorerView"
          icon="icons/treeView.png"
          id="de.tobject.findbugs.view.bugtreeview"
-         name="Bug Explorer">
+         name="Scan Results">
      </view>
    </extension>
 
@@ -681,22 +681,22 @@
       <imageprovider
          icon="icons/buggy-tiny.png"
          id="de.tobject.findbugs.imageprovider"
-         markertype="com.github.spotbugs.plugin.eclipse.findbugsMarkerScariest">
+         markertype="ai.clouddefense.plugin.eclipse.findbugsMarkerScariest">
       </imageprovider>
       <imageprovider
          icon="icons/buggy-tiny-orange.png"
          id="de.tobject.findbugs.imageprovider"
-         markertype="com.github.spotbugs.plugin.eclipse.findbugsMarkerScary">
+         markertype="ai.clouddefense.plugin.eclipse.findbugsMarkerScary">
       </imageprovider>
       <imageprovider
          icon="icons/buggy-tiny-yellow.png"
          id="de.tobject.findbugs.imageprovider"
-         markertype="com.github.spotbugs.plugin.eclipse.findbugsMarkerTroubling">
+         markertype="ai.clouddefense.plugin.eclipse.findbugsMarkerTroubling">
       </imageprovider>
       <imageprovider
          icon="icons/buggy-tiny-yellow2.png"
          id="de.tobject.findbugs.imageprovider"
-         markertype="com.github.spotbugs.plugin.eclipse.findbugsMarkerOfConcern">
+         markertype="ai.clouddefense.plugin.eclipse.findbugsMarkerOfConcern">
       </imageprovider>
    </extension>
 
@@ -714,19 +714,19 @@
    <extension
          point="org.eclipse.ui.ide.markerResolution">
       <markerResolutionGenerator
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerScariest"
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerScariest"
             class="edu.umd.cs.findbugs.plugin.eclipse.quickfix.BugResolutionGenerator"/>
       <markerResolutionGenerator
             class="edu.umd.cs.findbugs.plugin.eclipse.quickfix.BugResolutionGenerator"
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerScary">
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerScary">
       </markerResolutionGenerator>
       <markerResolutionGenerator
             class="edu.umd.cs.findbugs.plugin.eclipse.quickfix.BugResolutionGenerator"
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerTroubling">
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerTroubling">
       </markerResolutionGenerator>
       <markerResolutionGenerator
             class="edu.umd.cs.findbugs.plugin.eclipse.quickfix.BugResolutionGenerator"
-            markerType="com.github.spotbugs.plugin.eclipse.findbugsMarkerOfConcern">
+            markerType="ai.clouddefense.plugin.eclipse.findbugsMarkerOfConcern">
       </markerResolutionGenerator>
    </extension>
 
@@ -737,7 +737,7 @@
             fixed="false"
             icon="icons/buggy-tiny.png"
             id="de.tobject.findbugs.FindBugsPerspective"
-            name="SpotBugs">
+            name="CloudDefense">
       </perspective>
    </extension>
 
@@ -1029,7 +1029,7 @@
                  label="Confidence-&gt;Project-&gt;Pattern"
                  menubarPath="bugExplorer.menu.group/groupBy"
                  style="radio"
-                 tooltip="Change Bug Explorer Grouping">
+                 tooltip="Change Scan Results Grouping">
            </action>
            <action
                  class="de.tobject.findbugs.actions.GroupByAction"
@@ -1037,7 +1037,7 @@
                  label="Confidence-&gt;Rank-&gt;Pattern"
                  menubarPath="bugExplorer.menu.group/groupBy"
                  style="radio"
-                 tooltip="Change Bug Explorer Grouping">
+                 tooltip="Change Scan Results Grouping">
            </action>
 
            <action
@@ -1046,7 +1046,7 @@
                  label="Rank-&gt;Project-&gt;Pattern"
                  menubarPath="bugExplorer.menu.group/groupBy"
                  style="radio"
-                 tooltip="Change Bug Explorer Grouping">
+                 tooltip="Change Scan Results Grouping">
            </action>
            <action
                  class="de.tobject.findbugs.actions.GroupByAction"
@@ -1054,7 +1054,7 @@
                  label="Rank-&gt;Confidence-&gt;Pattern"
                  menubarPath="bugExplorer.menu.group/groupBy"
                  style="radio"
-                 tooltip="Change Bug Explorer Grouping">
+                 tooltip="Change Scan Results Grouping">
            </action>
 
            <action
@@ -1063,7 +1063,7 @@
                  label="Project-&gt;Confidence-&gt;Rank-&gt;Pattern"
                  menubarPath="bugExplorer.menu.group/groupBy"
                  style="radio"
-                 tooltip="Change Bug Explorer Grouping">
+                 tooltip="Change Scan Results Grouping">
            </action>
            <action
                  class="de.tobject.findbugs.actions.GroupByAction"
@@ -1071,7 +1071,7 @@
                  label="Project-&gt;Rank-&gt;Confidence-&gt;Pattern"
                  menubarPath="bugExplorer.menu.group/groupBy"
                  style="radio"
-                 tooltip="Change Bug Explorer Grouping">
+                 tooltip="Change Scan Results Grouping">
            </action>
 
            <action
@@ -1081,7 +1081,7 @@
                  label="Group By..."
                  menubarPath="bugExplorer.menu.group"
                  toolbarPath="filter"
-                 tooltip="Change Bug Explorer Grouping">
+                 tooltip="Change Scan Results Grouping">
            </action>
          <action
                class="de.tobject.findbugs.actions.ExpandAllAction"
@@ -1132,8 +1132,8 @@
          point="org.eclipse.ui.commands">
 
       <category
-            name="SpotBugs commands"
-            description="SpotBugs commands"
+            name="CloudDefense commands"
+            description="CloudDefense commands"
             id="FindBugs.category"/>
       <command
             categoryId="FindBugs.category"
@@ -1294,7 +1294,7 @@
        <propertyTester
              class="de.tobject.findbugs.view.explorer.GroupPropertyTester"
              id="de.tobject.findbugs.BugGroupTester"
-             namespace="com.github.spotbugs.plugin.eclipse"
+             namespace="ai.clouddefense.plugin.eclipse"
              properties="type"
              type="de.tobject.findbugs.view.explorer.BugGroup">
        </propertyTester>
@@ -1313,13 +1313,13 @@
              category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage"
              class="de.tobject.findbugs.properties.FindbugsPropertyPage"
              id="FindBugsPreferencePage"
-             name="SpotBugs">
-          <keywordReference id="com.github.spotbugs.plugin.eclipse.keywords"/>
+             name="CloudDefense">
+          <keywordReference id="ai.clouddefense.plugin.eclipse.keywords"/>
        </page>
     </extension>
     <extension
           point="org.eclipse.ui.keywords">
-       <keyword id="com.github.spotbugs.plugin.eclipse.keywords"
+       <keyword id="ai.clouddefense.plugin.eclipse.keywords"
              label="bugs findbugs spotbugs"/>
     </extension>
 
@@ -1328,7 +1328,7 @@
       <consoleFactory
             class="de.tobject.findbugs.view.FindBugsConsole$FindBugsConsoleFactory"
             icon="icons/buggy-tiny.png"
-            label="SpotBugs Console"/>
+            label="CloudDefense Console"/>
    </extension>
    <extension
          point="org.eclipse.ui.console.consolePageParticipants">
@@ -1346,11 +1346,11 @@
             categoryId="findBugsEclipsePlugin.theme"
             defaultsTo="org.eclipse.jface.textfont"
             id="findBugsEclipsePlugin.consoleFont"
-            label="SpotBugs Console">
+            label="CloudDefense Console">
       </fontDefinition>
       <themeElementCategory
             id="findBugsEclipsePlugin.theme"
-            label="SpotBugs">
+            label="CloudDefense">
       </themeElementCategory>
    </extension>
 
@@ -1370,13 +1370,13 @@
          point="org.eclipse.ui.preferenceTransfer">
        <transfer
             icon="icons/buggy-tiny.png"
-            name="SpotBugs Preferences"
-            id="com.github.spotbugs.plugin.eclipse">
+            name="CloudDefense Preferences"
+            id="ai.clouddefense.plugin.eclipse">
             <mapping scope="instance">
-                <entry node="com.github.spotbugs.plugin.eclipse"/>
+                <entry node="ai.clouddefense.plugin.eclipse"/>
             </mapping>
       <description>
-             Java &gt; SpotBugs preferences.
+             Java &gt; CloudDefense preferences.
       </description>
     </transfer>
    </extension>

@@ -31,7 +31,7 @@ public class UserPreferencesTest {
 
     @Test
     public void testReadEffortSpotBugsPrefix() throws IOException {
-        String testPrefsString = "/instance/com.github.spotbugs.plugin.eclipse/effort=max";
+        String testPrefsString = "/instance/ai.clouddefense.plugin.eclipse/effort=max";
 
         UserPreferences userPrefs = UserPreferences.createDefaultUserPreferences();
 

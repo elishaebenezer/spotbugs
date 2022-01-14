@@ -115,7 +115,7 @@ public class ReportConfigurationTab extends Composite {
         rankGroup.setLayoutData(new GridData(SWT.BEGINNING, SWT.TOP, true, true));
 
         Label bugSeverityLabel = new Label(rankGroup, SWT.NONE);
-        bugSeverityLabel.setText("Scariest:");
+        bugSeverityLabel.setText("Critical:");
 
         scariestRankCombo = new Combo(rankGroup, SWT.DROP_DOWN | SWT.READ_ONLY);
         for (MarkerSeverity markerSeverity : markerSeverities) {
@@ -125,7 +125,7 @@ public class ReportConfigurationTab extends Composite {
         scariestRankCombo.setText(initialScariestRank.name());
 
         bugSeverityLabel = new Label(rankGroup, SWT.NONE);
-        bugSeverityLabel.setText("Scary:");
+        bugSeverityLabel.setText("High:");
 
         scaryRankCombo = new Combo(rankGroup, SWT.DROP_DOWN | SWT.READ_ONLY);
         for (MarkerSeverity markerSeverity : markerSeverities) {
@@ -135,7 +135,7 @@ public class ReportConfigurationTab extends Composite {
         scaryRankCombo.setText(initialScaryRank.name());
 
         bugSeverityLabel = new Label(rankGroup, SWT.NONE);
-        bugSeverityLabel.setText("Troubling:");
+        bugSeverityLabel.setText("Medium:");
 
         troublingRankCombo = new Combo(rankGroup, SWT.DROP_DOWN | SWT.READ_ONLY);
         for (MarkerSeverity markerSeverity : markerSeverities) {
@@ -145,7 +145,7 @@ public class ReportConfigurationTab extends Composite {
         troublingRankCombo.setText(initialTroublingRank.name());
 
         bugSeverityLabel = new Label(rankGroup, SWT.NONE);
-        bugSeverityLabel.setText("Of concern:");
+        bugSeverityLabel.setText("Low:");
 
         ofConcernRankCombo = new Combo(rankGroup, SWT.DROP_DOWN | SWT.READ_ONLY);
         for (MarkerSeverity markerSeverity : markerSeverities) {

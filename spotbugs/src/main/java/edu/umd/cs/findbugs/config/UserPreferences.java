@@ -189,7 +189,7 @@ public class UserPreferences implements Cloneable {
                 String key = e.getKey().toString();
                 String value = e.getValue().toString();
                 prefixlessProperties.setProperty(key.replace("/instance/edu.umd.cs.findbugs.plugin.eclipse/", "")
-                        .replace("/instance/com.github.spotbugs.plugin.eclipse/", ""), value);
+                        .replace("/instance/ai.clouddefense.plugin.eclipse/", ""), value);
             } else {
                 prefixlessProperties.put(e.getKey(), e.getValue());
             }

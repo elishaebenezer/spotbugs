@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
 
-   <description url="https://spotbugs.github.io/eclipse-latest">
-      Eclipse update site for SpotBugs.
+   <description url="https://integrations.clouddefense.ai/eclipse-latest">
+      Eclipse update site for CloudDefense.
    </description>
 
    <feature url="features/@FEATURE_ID@_@FEATURE_VERSION@.jar"
             id="@FEATURE_ID@"
             version="@FEATURE_VERSION@">
-      <category name="SpotBugs"/>
+      <category name="CloudDefense"/>
    </feature>
 
-   <category-def name="SpotBugs" label="SpotBugs">
+   <category-def name="CloudDefense" label="CloudDefense">
       <description>
-         SpotBugs is a program which uses static analysis to look for bugs in Java code.
+         CloudDefense is a program which uses static analysis to look for bugs in Java code.
       </description>
    </category-def>
 

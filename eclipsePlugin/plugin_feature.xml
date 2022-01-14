@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="@FEATURE_ID@"
-      label="SpotBugs"
+      label="CloudDefense"
       version="@FEATURE_VERSION@"
-      provider-name="SpotBugs Project"
+      provider-name="CloudDefense Project"
       plugin="@PLUGIN_ID@">
 
    <description url="https://spotbugs.github.io/">
-      SpotBugs is a program which uses static analysis to look for bugs in Java code, a spiritual successor of FindBugs.
+      CloudDefense is a program which uses static analysis to look for bugs in Java code, a spiritual successor of SpotBugs.
    </description>
 
    <copyright>
+      (c) 2022, CloudDefense AI, Inc.
       (c) 2017, SpotBugs Project
       (c) 2006-2011, University of Maryland
    </copyright>
@@ -21,7 +22,7 @@ http://www.gnu.org/licenses/lgpl.html
    </license>
 
    <url>
-      <update label="SpotBugs update site" url="https://spotbugs.github.io/eclipse/"/>
+      <update label="CloudDefense update site" url="https://integrations.clouddefense.ai/eclipse/"/>
    </url>
 
    <requires>

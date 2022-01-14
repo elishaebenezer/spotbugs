@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SpotBugs Eclipse Plugin Test Plug-in
-Bundle-SymbolicName: com.github.spotbugs.plugin.eclipse.test;singleton:=true
+Bundle-SymbolicName: ai.clouddefense.plugin.eclipse.test;singleton:=true
 Bundle-Version: 3.1.0.qualifier
 Bundle-Activator: de.tobject.findbugs.FindbugsTestPlugin
 Bundle-Vendor: FindBugs Project
-Require-Bundle: com.github.spotbugs.plugin.eclipse,
+Require-Bundle: ai.clouddefense.plugin.eclipse,
  org.eclipse.jdt.ui,
  org.eclipse.jdt.core,
  org.eclipse.jdt.junit,
